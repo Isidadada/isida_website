@@ -75,7 +75,8 @@
   
   /* セクション共通 */
   section {
-    padding: 4rem 2rem;
+    padding: 6rem 2rem 4rem 2rem;
+    margin-top: 70px; /* 固定ヘッダー分の余白 */
   }
   
   section h2 {
@@ -85,7 +86,7 @@
     color: #333;
   }
   
-  /* 作品置き場 */
+  /* 作品置き場・各ブロック */
   .portfolio-container {
     display: flex;
     flex-wrap: wrap;
@@ -93,33 +94,22 @@
     gap: 2rem;
   }
   
-  .portfolio-container .artworks,
-  .portfolio-container .music {
-    flex: 1 1 45%;
-  }
-  
-  .portfolio-container h3 {
-    text-align: center;
-    margin-bottom: 1rem;
-    font-size: 2rem;
-  }
-  
-  .item {
+  .portfolio-container .item {
     text-align: center;
   }
   
-  .item img {
+  .portfolio-container .item img {
     width: 100%;
     max-width: 300px;
     border-radius: 8px;
     transition: transform 0.3s;
   }
   
-  .item img:hover {
+  .portfolio-container .item img:hover {
     transform: scale(1.05);
   }
   
-  /* 日記 */
+  /* 日記エントリー（一覧・詳細共通） */
   .diary-entry {
     max-width: 800px;
     margin: 0 auto 2rem auto;
@@ -154,10 +144,6 @@
     .portfolio-container {
       flex-direction: column;
       align-items: center;
-    }
-    .portfolio-container .artworks,
-    .portfolio-container .music {
-      flex: 1 1 100%;
     }
   }
   

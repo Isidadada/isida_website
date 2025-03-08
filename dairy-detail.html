@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>日記詳細 - My Creative Space</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- ヘッダー -->
+  <header>
+    <nav>
+      <div class="logo">My Creative Space</div>
+      <ul>
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="diary.html">日記</a></li>
+        <li><a href="songs.html">曲</a></li>
+        <li><a href="illustrations.html">イラスト</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- 日記詳細セクション -->
+  <section id="diary-detail">
+    <div id="diary-content">
+      <!-- JSONから読み込んだ詳細がここに表示されます -->
+    </div>
+    <p><a href="diary.html">日記一覧に戻る</a></p>
+  </section>
+
+  <!-- フッター -->
+  <footer>
+    <p>&copy; 2025 My Creative Space. All Rights Reserved.</p>
+  </footer>
+
+  <!-- URLパラメータからIDを取得し、JSONから対象エントリーを表示するJavaScript -->
+  <script>
+    // URLクエリパラメータからidを取得
+    const urlParams = new URLSearchParams(window.location.search);
+    const diaryId = urlParams.get('id');
+
+    fetch('diary.json')
+      .then(response => response.json())
+      .then(data => {
+        const diary = data.find(entry => entry.id === diaryId);
+        if(diary) {
+          document.getElementById('diary-content').innerHTML = `
+            <h2>${diary.title}</h2>
+            <p>${diary.content}</p>
+          `;
+        } else {
+          document.getElementById('diary-content').innerHTML = `<p>該当する日記が見つかりません。</p>`;
+        }
+      })
+      .catch(error => console.error('Error loading diary.json:', error));
+  </script>
+</body>
+</html>
