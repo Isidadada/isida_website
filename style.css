@@ -5,11 +5,11 @@
     box-sizing: border-box;
   }
   
-  /* ボディ基本設定 */
+  /* Body */
   body {
-    font-family: Arial, sans-serif;
-    background: #f4f4f4;
-    color: #333;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background: #fff;
+    color: #222;
     line-height: 1.6;
   }
   
@@ -23,24 +23,23 @@
   /* ヘッダー */
   header {
     background: #fff;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-bottom: 1px solid #ccc;
     position: fixed;
     top: 0;
-    left: 0;
     width: 100%;
-    z-index: 1000;
+    z-index: 100;
   }
   header .container {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding: 15px 0;
+    align-items: center;
+    padding: 20px 0;
   }
   .logo a {
     text-decoration: none;
-    color: #3b82f6;
     font-size: 1.8rem;
     font-weight: bold;
+    color: #000;
   }
   nav ul {
     list-style: none;
@@ -51,83 +50,99 @@
   }
   nav ul li a {
     text-decoration: none;
-    color: #3b82f6;
     font-size: 1rem;
+    color: #000;
     transition: color 0.3s;
   }
   nav ul li a:hover {
-    color: #1e40af;
+    color: #555;
   }
   
   /* ヒーローセクション */
   .hero {
+    margin-top: 80px; /* 固定ヘッダー分 */
     height: 100vh;
-    background: #3b82f6;
     display: flex;
     align-items: center;
     justify-content: center;
+    background: #f0f0f0;
+    border-bottom: 1px solid #ddd;
+  }
+  .hero-content {
     text-align: center;
-    padding: 0 20px;
-    margin-top: 70px; /* ヘッダー分の余白 */
   }
   .hero-content h2 {
     font-size: 3rem;
     margin-bottom: 20px;
-    color: #fff;
+    color: #000;
   }
   .hero-content p {
     font-size: 1.5rem;
     margin-bottom: 30px;
-    color: #fff;
+    color: #444;
   }
-  .buttons {
+  .hero-buttons {
     display: flex;
     flex-direction: column;
     gap: 15px;
+    align-items: center;
   }
-  .buttons a {
-    padding: 10px 20px;
-    background: #fff;
-    color: #3b82f6;
+  .hero-buttons .btn {
+    padding: 12px 25px;
+    background: #000;
+    color: #fff;
     text-decoration: none;
     font-weight: bold;
-    border-radius: 5px;
+    border-radius: 3px;
     transition: background 0.3s;
   }
-  .buttons a:hover {
-    background: #e0f2fe;
+  .hero-buttons .btn:hover {
+    background: #333;
   }
   
-  /* コンテンツ領域 */
+  /* コンテンツエリア */
   .content {
     padding: 100px 0 50px;
-    margin-top: 70px;
+    margin-top: 20px;
   }
   .content h2 {
     font-size: 2.5rem;
-    color: #3b82f6;
     text-align: center;
     margin-bottom: 40px;
+    color: #000;
   }
   
-  /* 日記エントリー */
-  .diary-entry {
-    background: #fff;
-    padding: 20px;
+  /* 日記リスト */
+  .diary-list details {
     margin-bottom: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
   }
-  .diary-entry h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    color: #1e40af;
+  .diary-list summary {
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    color: #000;
+  }
+  .diary-list summary::-webkit-details-marker {
+    display: none;
+  }
+  .diary-list summary::after {
+    content: "▼";
+    float: right;
+  }
+  .diary-list details[open] summary::after {
+    content: "▲";
+  }
+  .diary-list p {
+    padding: 10px 0 0 10px;
+    color: #444;
   }
   
-  /* ギャラリー */
+  /* イラストギャラリー */
   .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
   }
   .gallery img {
@@ -140,16 +155,52 @@
     transform: scale(1.05);
   }
   
+  /* 音楽ギャラリー */
+  .music-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  .music-item {
+    background: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .music-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  .music-item img {
+    width: 100%;
+    display: block;
+    filter: grayscale(100%);
+    transition: filter 0.3s;
+  }
+  .music-item:hover img {
+    filter: grayscale(0%);
+  }
+  .music-info {
+    padding: 15px;
+  }
+  .music-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #000;
+  }
+  .music-info p {
+    font-size: 0.9rem;
+    color: #555;
+  }
+  
   /* フッター */
   footer {
     background: #fff;
-    text-align: center;
-    padding: 15px 0;
     border-top: 1px solid #ccc;
+    padding: 20px 0;
+    text-align: center;
+    color: #777;
     margin-top: 50px;
-  }
-  footer p {
-    font-size: 0.9rem;
-    color: #666;
   }
   
