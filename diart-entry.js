@@ -7,7 +7,7 @@ fetch('diary.json')
     const entry = data.find(e => e.date === date);
     if (entry) {
       document.getElementById('entry-title').textContent = `${entry.date} - ${entry.title}`;
-      document.getElementById('entry-content').textContent = entry.content;
+      document.getElementById('entry-content').textContent = entry.content; // 内容を表示
     } else {
       document.getElementById('entry-title').textContent = '日記が見つかりませんでした。';
     }
