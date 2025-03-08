@@ -5,10 +5,10 @@
     box-sizing: border-box;
   }
   
-  /* ボディ全体のスタイル */
+  /* ボディ全体 */
   body {
-    font-family: 'Montserrat', sans-serif;
-    background: linear-gradient(135deg, #1f1c2c, #928dab);
+    font-family: 'Orbitron', sans-serif;
+    background-color: #111;
     color: #fff;
     padding: 20px;
   }
@@ -31,7 +31,7 @@
   }
   
   header h1 a:hover {
-    color: #f39c12;
+    color: #ccc;
   }
   
   /* ナビゲーション */
@@ -45,13 +45,13 @@
   
   nav ul li a {
     text-decoration: none;
-    color: #ddd;
+    color: #aaa;
     font-size: 1.1em;
     transition: color 0.3s, transform 0.3s;
   }
   
   nav ul li a:hover {
-    color: #f39c12;
+    color: #fff;
     transform: translateY(-3px);
   }
   
@@ -59,25 +59,57 @@
   section#content {
     max-width: 900px;
     margin: 0 auto 40px;
-    background: rgba(255, 255, 255, 0.1);
+    background-color: #222;
     padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(5px);
+    border: 2px solid #444;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    position: relative;
+  }
+  
+  /* 幾何学的なパターンのオーバーレイ */
+  section#content::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,0.05) 10px, rgba(255,255,255,0.05) 20px);
+    z-index: -1;
+    border-radius: 12px;
   }
   
   section#content h2 {
     margin-bottom: 15px;
-    border-bottom: 2px solid #f39c12;
     padding-bottom: 10px;
+    border-bottom: 2px solid #444;
+  }
+  
+  /* 記事リスト */
+  .article-list {
+    list-style: none;
+    margin-top: 20px;
+  }
+  
+  .article-list li {
+    margin-bottom: 10px;
+  }
+  
+  .article-list li a {
+    text-decoration: none;
+    color: #aaa;
+    transition: color 0.3s;
+  }
+  
+  .article-list li a:hover {
+    color: #fff;
   }
   
   /* フッター */
   footer {
     text-align: center;
     font-size: 0.9em;
-    color: #bbb;
+    color: #777;
   }
-  
-  /* ※必要に応じて各ページ固有の追加スタイルをここに記述 */
   
