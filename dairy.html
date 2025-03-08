@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>日記一覧 - My Creative Space</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- ヘッダー -->
+  <header>
+    <nav>
+      <div class="logo">My Creative Space</div>
+      <ul>
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="diary.html">日記</a></li>
+        <li><a href="songs.html">曲</a></li>
+        <li><a href="illustrations.html">イラスト</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- 日記一覧セクション -->
+  <section id="diary">
+    <h2>日記一覧</h2>
+    <div id="diary-list">
+      <!-- JSONから読み込んだ日記エントリーがここに挿入されます -->
+    </div>
+  </section>
+
+  <!-- フッター -->
+  <footer>
+    <p>&copy; 2025 My Creative Space. All Rights Reserved.</p>
+  </footer>
+
+  <!-- JSON読み込み用JavaScript -->
+  <script>
+    // diary.jsonからデータを取得して表示する
+    fetch('diary.json')
+      .then(response => response.json())
+      .then(data => {
+        const diaryList = document.getElementById('diary-list');
+        data.forEach(entry => {
+          // 各エントリーをリンクとして作成。detailページにエントリーIDを渡す
+          const item = document.createElement('div');
+          item.className = 'diary-entry';
+          item.innerHTML = `<h3><a href="diary-detail.html?id=${entry.id}">${entry.title}</a></h3>`;
+          diaryList.appendChild(item);
+        });
+      })
+      .catch(error => console.error('Error loading diary.json:', error));
+  </script>
+</body>
+</html>
