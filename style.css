@@ -2,12 +2,12 @@ body {
     font-family: sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
+    background-color: #f8f8f8; /* 薄いグレーに変更 */
     color: #333;
 }
 
 header {
-    background-color: #333;
+    background-color: #6a5acd; /* 少し明るい紫色に変更 */
     color: #fff;
     text-align: center;
     padding: 1em 0;
@@ -26,11 +26,22 @@ main {
     margin-bottom: 1em;
     padding: 1em;
     border: 1px solid #ddd;
+    background-color: #fff; /* 背景色を白に変更 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 少し影をつける */
+}
+
+.entry a {
+    color: #6a5acd; /* リンクの色をヘッダーと同じ紫色に変更 */
+    text-decoration: none;
+}
+
+.entry a:hover {
+    text-decoration: underline; /* ホバー時に下線を引く */
 }
 
 footer {
     text-align: center;
     padding: 1em 0;
-    background-color: #333;
+    background-color: #6a5acd;
     color: #fff;
 }
