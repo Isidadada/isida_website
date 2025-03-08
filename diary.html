@@ -1,47 +1,47 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>日記 - My Creative Space</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日記の詳細</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #222; color: #fff; }
+        .container { max-width: 600px; margin: 20px auto; padding: 20px; background: #333; border-radius: 8px; }
+        a { color: #1e90ff; text-decoration: none; }
+    </style>
 </head>
 <body>
-  <!-- ヘッダー -->
-  <header>
-    <div class="container">
-      <h1 class="logo"><a href="index.html">My Creative Space</a></h1>
-      <nav>
-        <ul>
-          <li><a href="diary.html">日記</a></li>
-          <li><a href="illustration.html">イラスト</a></li>
-          <li><a href="music.html">曲</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
 
-  <!-- コンテンツ -->
-  <main class="container content">
-    <h2>日記</h2>
-    <div class="diary-list">
-      <details>
-        <summary>2025/03/08 - 今日の出来事</summary>
-        <p>今日は素晴らしい日でした。色々なことに挑戦し、充実した時間を過ごしました。</p>
-      </details>
-      <details>
-        <summary>2025/03/07 - 雨の日の思い</summary>
-        <p>雨の日は、静かに家で過ごすのも良いと感じました。読書と音楽に浸りました。</p>
-      </details>
-      <!-- 他の日記エントリーを追加 -->
-    </div>
-  </main>
-
-  <!-- フッター -->
-  <footer>
     <div class="container">
-      <p>&copy; 2025 My Creative Space. All Rights Reserved.</p>
+        <h1 id="diaryTitle"></h1>
+        <p id="diaryDate"></p>
+        <p id="diaryContent"></p>
+        <a href="index.html">← 日記一覧に戻る</a>
     </div>
-  </footer>
+
+    <script>
+        // JSONデータ（実際はサーバーやデータベースから取得することが多い）
+        const diaryEntries = [
+            { "date": "2025-03-08", "title": "今日の出来事", "content": "今日は素晴らしい日でした。" },
+            { "date": "2025-03-07", "title": "雨の日の思い", "content": "雨の日は静かに家で過ごすのも良いと感じました。aaaaa" }
+        ];
+
+        // URLから日記の「date」パラメータを取得
+        const params = new URLSearchParams(window.location.search);
+        const date = params.get("date");
+
+        // 該当する日記を検索
+        const entry = diaryEntries.find(d => d.date === date);
+
+        // 日記の情報をページに表示
+        if (entry) {
+            document.getElementById("diaryTitle").textContent = entry.title;
+            document.getElementById("diaryDate").textContent = `日付: ${entry.date}`;
+            document.getElementById("diaryContent").textContent = entry.content;
+        } else {
+            document.querySelector(".container").innerHTML = "<h1>日記が見つかりませんでした</h1>";
+        }
+    </script>
+
 </body>
 </html>
