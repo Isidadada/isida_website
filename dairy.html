@@ -2,53 +2,35 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>日記一覧 - My Creative Space</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>日記 - My Website</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- ヘッダー -->
   <header>
+    <h1>日記</h1>
     <nav>
-      <div class="logo">My Creative Space</div>
-      <ul>
-        <li><a href="index.html">ホーム</a></li>
-        <li><a href="diary.html">日記</a></li>
-        <li><a href="songs.html">曲</a></li>
-        <li><a href="illustrations.html">イラスト</a></li>
-      </ul>
+      <a href="index.html">ホーム</a>
+      <a href="illustration.html">イラスト</a>
+      <a href="music.html">曲</a>
     </nav>
   </header>
-
-  <!-- 日記一覧セクション -->
-  <section id="diary">
-    <h2>日記一覧</h2>
-    <div id="diary-list">
-      <!-- JSONから読み込んだ日記エントリーがここに挿入されます -->
+  <main>
+    <div class="diary-container">
+      <div class="diary-card">
+        <h2><a href="diary1.html">初めての日記</a></h2>
+        <p>2025年3月8日</p>
+      </div>
+      <div class="diary-card">
+        <h2><a href="diary2.html">最近の出来事</a></h2>
+        <p>2025年3月7日</p>
+      </div>
+      <!-- 他の日記を追加 -->
     </div>
-  </section>
-
-  <!-- フッター -->
+  </main>
   <footer>
-    <p>&copy; 2025 My Creative Space. All Rights Reserved.</p>
+    <p>&copy; 2025 My Website</p>
   </footer>
-
-  <!-- JSON読み込み用JavaScript -->
-  <script>
-    // diary.jsonからデータを取得して表示する
-    fetch('diary.json')
-      .then(response => response.json())
-      .then(data => {
-        const diaryList = document.getElementById('diary-list');
-        data.forEach(entry => {
-          // 各エントリーをリンクとして作成。detailページにエントリーIDを渡す
-          const item = document.createElement('div');
-          item.className = 'diary-entry';
-          item.innerHTML = `<h3><a href="diary-detail.html?id=${entry.id}">${entry.title}</a></h3>`;
-          diaryList.appendChild(item);
-        });
-      })
-      .catch(error => console.error('Error loading diary.json:', error));
-  </script>
 </body>
 </html>
