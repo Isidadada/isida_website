@@ -1,28 +1,37 @@
-/* 基本リセット */
-body, h1, h2, p, ul, li {
+/* リセット */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
   }
   
-  /* 全体のスタイル */
+  /* ボディ全体のスタイル */
   body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #f9f9f9;
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #1f1c2c, #928dab);
+    color: #fff;
     padding: 20px;
   }
   
   /* ヘッダー */
   header {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
+  }
+  
+  header h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
   }
   
   header h1 a {
     text-decoration: none;
-    color: #333;
-    font-size: 2em;
+    color: #fff;
+    transition: color 0.3s;
+  }
+  
+  header h1 a:hover {
+    color: #f39c12;
   }
   
   /* ナビゲーション */
@@ -30,43 +39,45 @@ body, h1, h2, p, ul, li {
     list-style: none;
     display: flex;
     justify-content: center;
-    margin-top: 10px;
-  }
-  
-  nav ul li {
-    margin: 0 15px;
+    gap: 30px;
+    margin-top: 20px;
   }
   
   nav ul li a {
     text-decoration: none;
-    color: #555;
-    font-weight: bold;
-    transition: color 0.3s;
+    color: #ddd;
+    font-size: 1.1em;
+    transition: color 0.3s, transform 0.3s;
   }
   
   nav ul li a:hover {
-    color: #000;
+    color: #f39c12;
+    transform: translateY(-3px);
   }
   
   /* コンテンツエリア */
   section#content {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    background: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    max-width: 900px;
+    margin: 0 auto 40px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
   }
   
   section#content h2 {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #f39c12;
+    padding-bottom: 10px;
   }
   
   /* フッター */
   footer {
     text-align: center;
-    margin-top: 20px;
-    font-size: 0.8em;
-    color: #888;
+    font-size: 0.9em;
+    color: #bbb;
   }
+  
+  /* ※必要に応じて各ページ固有の追加スタイルをここに記述 */
   
