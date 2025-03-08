@@ -1,27 +1,28 @@
 /* 基本設定 */
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Orbitron', sans-serif;
+    background-color: #111;
+    color: #eee;
     max-width: 900px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #f5f5f5;
-    color: #333;
   }
   
   /* ヘッダー */
   header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: linear-gradient(to right, #4facfe, #00f2fe);
-    color: white;
     text-align: center;
-    padding: 15px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
+    padding: 20px;
+    background: #000;
+    border-bottom: 2px solid #888;
   }
   
+  h1 {
+    font-size: 2rem;
+    color: white;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  }
+  
+  /* ナビゲーション */
   nav {
     margin-top: 10px;
   }
@@ -30,22 +31,24 @@ body {
     margin: 0 15px;
     text-decoration: none;
     font-weight: 600;
-    color: white;
-    transition: color 0.3s;
+    color: #888;
+    transition: color 0.3s, text-shadow 0.3s;
   }
   
   nav a:hover {
-    color: #ffd700;
+    color: white;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
   }
   
   /* ホームのヒーローセクション */
   .hero {
     text-align: center;
-    margin-top: 80px;
+    margin-top: 100px;
     padding: 50px;
-    background: #fff;
+    background: #222;
+    border: 2px solid #888;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
   }
   
   /* 日記ページ */
@@ -57,15 +60,16 @@ body {
   }
   
   .diary-card {
-    background: white;
+    background: #222;
     padding: 15px;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
+    border: 2px solid #888;
+    transition: transform 0.3s, box-shadow 0.3s;
   }
   
   .diary-card:hover {
-    transform: scale(1.02);
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
   }
   
   .diary-card h2 {
@@ -75,12 +79,13 @@ body {
   
   .diary-card a {
     text-decoration: none;
-    color: #007BFF;
+    color: #00f2fe;
     font-weight: bold;
+    transition: color 0.3s, text-shadow 0.3s;
   }
   
   .diary-card a:hover {
-    text-decoration: underline;
+    text-shadow: 0 0 5px #00f2fe;
   }
   
   /* フッター */
@@ -89,6 +94,6 @@ body {
     margin-top: 40px;
     padding: 10px;
     font-size: 14px;
-    color: #666;
+    color: #aaa;
   }
   
