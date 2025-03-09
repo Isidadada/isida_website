@@ -3,30 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>曲</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <title>曲 - 自作サイト</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <h1><a href="#content">曲</a></h1>
+    <h1 onclick="document.getElementById('content').scrollIntoView({behavior: 'smooth'})">曲</h1>
     <nav>
-      <ul>
-        <li><a href="home.html">ホーム</a></li>
-        <li><a href="illustration.html">イラスト</a></li>
-        <li><a href="music.html">曲</a></li>
-        <li><a href="document.html">記事</a></li>
-      </ul>
+      <a href="home.html">ホーム</a>
+      <a href="illustration.html">イラスト</a>
+      <a href="music.html">曲</a>
+      <a href="document.html">記事</a>
     </nav>
   </header>
 
-  <section id="content">
-    <h2>曲の内容</h2>
-    <p>ここに曲の内容を記述します。モノクロの幾何学的デザインが、音楽のリズムと融合するかのような印象を与えます。</p>
-  </section>
+  <div class="main-content" id="content">
+    <section>
+      <h2 class="section-title" onclick="this.parentElement.scrollIntoView({behavior: 'smooth'})">音楽プレイリスト</h2>
+      <p>ここには選りすぐりの楽曲を集めたプレイリストがあります。音楽を楽しんでください。</p>
+    </section>
+  </div>
 
   <footer>
-    <p>&copy; 2025 自作サイト</p>
+    &copy; 2025 自作サイト. All rights reserved.
   </footer>
 </body>
 </html>

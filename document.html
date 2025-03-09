@@ -3,36 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>記事</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <title>記事 - 自作サイト</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <!-- 記事ページもタイトルクリックで#contentに遷移 -->
-    <h1><a href="#content">記事</a></h1>
+    <h1 onclick="document.getElementById('content').scrollIntoView({behavior: 'smooth'})">記事</h1>
     <nav>
-      <ul>
-        <li><a href="home.html">ホーム</a></li>
-        <li><a href="illustration.html">イラスト</a></li>
-        <li><a href="music.html">曲</a></li>
-        <li><a href="document.html">記事</a></li>
-      </ul>
+      <a href="home.html">ホーム</a>
+      <a href="illustration.html">イラスト</a>
+      <a href="music.html">曲</a>
+      <a href="document.html">記事</a>
     </nav>
   </header>
 
-  <section id="content">
-    <h2>記事の内容</h2>
-    <p>各記事のタイトルをクリックすると詳細ページへ遷移できる仕組みになっています。</p>
-    <ul class="article-list">
-      <li><a href="article1.html">記事タイトル 1</a></li>
-      <li><a href="article2.html">記事タイトル 2</a></li>
-      <li><a href="article3.html">記事タイトル 3</a></li>
-    </ul>
-  </section>
+  <div class="main-content" id="content">
+    <section>
+      <h2 class="section-title" onclick="this.parentElement.scrollIntoView({behavior: 'smooth'})">最新の記事</h2>
+      <p>ここでは興味深い記事やコラムを掲載しています。最新の投稿をチェックしてください。</p>
+    </section>
+  </div>
 
   <footer>
-    <p>&copy; 2025 自作サイト</p>
+    &copy; 2025 自作サイト. All rights reserved.
   </footer>
 </body>
 </html>

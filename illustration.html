@@ -3,30 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>イラスト</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <title>イラスト - 自作サイト</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <h1><a href="#content">イラスト</a></h1>
+    <h1 onclick="document.getElementById('content').scrollIntoView({behavior: 'smooth'})">イラスト</h1>
     <nav>
-      <ul>
-        <li><a href="home.html">ホーム</a></li>
-        <li><a href="illustration.html">イラスト</a></li>
-        <li><a href="music.html">曲</a></li>
-        <li><a href="document.html">記事</a></li>
-      </ul>
+      <a href="home.html">ホーム</a>
+      <a href="illustration.html">イラスト</a>
+      <a href="music.html">曲</a>
+      <a href="document.html">記事</a>
     </nav>
   </header>
 
-  <section id="content">
-    <h2>イラストの内容</h2>
-    <p>ここにイラストページの内容を記述します。モノクロの色調と幾何学的なパターンが、クールなビジュアルを演出します。</p>
-  </section>
+  <div class="main-content" id="content">
+    <section>
+      <h2 class="section-title" onclick="this.parentElement.scrollIntoView({behavior: 'smooth'})">イラストギャラリー</h2>
+      <p>ここには素晴らしいイラスト作品を展示しています。お気に入りの作品を見つけてください。</p>
+    </section>
+  </div>
 
   <footer>
-    <p>&copy; 2025 自作サイト</p>
+    &copy; 2025 自作サイト. All rights reserved.
   </footer>
 </body>
 </html>
