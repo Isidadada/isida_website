@@ -293,10 +293,20 @@ header {
 .site-title a {
   text-decoration: none;
   color: #444;
-  font-size: 2.5rem;
-  font-weight: 700;
+  font-size: 2.0rem;
+  font-weight: 400;
   transition: color 0.3s ease;
 }
+
+.site-title {
+  margin-left: 0; 
+  font-size: 1rem;
+}
+.page-title {
+   font-size: 1.5rem;
+   font-weight: bold; 
+  }
+  
 
 .site-title a:hover {
   color: rgba(118, 222, 118, 0.8);
@@ -314,7 +324,7 @@ header {
 .nav-list li a {
   text-decoration: none;
   color: #444;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   padding: 8px 12px;
   border-radius: 20px;
   transition: background-color 0.3s ease, transform 0.3s ease;
@@ -367,6 +377,15 @@ main {
 
 .diary-list li a:hover {
   color: rgba(118, 222, 118, 0.8);
+}
+
+.diary-date {
+  font-family: 'Nunito', sans-serif; /* フォントをNunitoに */
+  font-size: 30px; /* フォントサイズを変更 */
+  font-weight: bold; /* 太字に */
+  color: #333; /* 文字色を変更 */
+  text-align: left; /* 左揃え */
+  margin-bottom: 10px; /* 余白を追加 */
 }
 
 .diary-entry .diary-date {
