@@ -430,3 +430,60 @@ footer p {
     margin: 10px 0;
   }
 }
+
+/* 画面幅が768px以下（タブレット・スマホ向け）のとき */
+@media screen and (max-width: 768px) {
+  .container {
+      width: 90%;
+      margin: 0 auto;
+  }
+
+  /* ヘッダーのナビゲーション */
+  .nav-list {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      padding: 0;
+  }
+
+  .nav-list li {
+      margin-bottom: 10px;
+  }
+
+  /* 日記のタイトルや本文 */
+  .diary-date {
+      font-size: 16px;
+      text-align: center;
+  }
+
+  .diary-content {
+      padding: 10px;
+  }
+
+  /* フッターの調整 */
+  footer .container {
+      text-align: center;
+      font-size: 14px;
+  }
+}
+
+/* 画面幅が480px以下（スマホ向け） */
+@media screen and (max-width: 480px) {
+  h1.site-title {
+      font-size: 20px;
+  }
+
+  .diary-date {
+      font-size: 14px;
+  }
+
+  .diary-content p {
+      font-size: 14px;
+      line-height: 1.5;
+  }
+
+  .nav-list {
+      flex-direction: column;
+      padding: 0;
+  }
+}
