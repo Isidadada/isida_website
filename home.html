@@ -1,31 +1,42 @@
+  <!-- 人のページのソースなんてじろじろ見るもんじゃありません！！！
+      大した技術力がないから恥ずかしいのです。ちゃんと勉強できたら高度なこともしてみたいとは思っているんですよ。-->
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ホーム - 自作サイト</title>
+  <title>あｂ</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
-    <h1 onclick="document.getElementById('content').scrollIntoView({behavior: 'smooth'})">ホーム</h1>
-    <nav>
-      <a href="home.html">ホーム</a>
-      <a href="illustration.html">イラスト</a>
-      <a href="music.html">曲</a>
-      <a href="document.html">記事</a>
-    </nav>
+    <div class="container header-container">
+      <h1 class="site-title"><a href="#content">ホーム</a></h1>
+      <nav>
+        <ul class="nav-list">
+          <li><a href="home.html"></a></li>
+          <li><a href="illustration.html">絵</a></li>
+          <li><a href="music.html">音楽</a></li>
+          <li><a href="document.html">日記</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
-
-  <div class="main-content" id="content">
-    <section>
-      <h2 class="section-title" onclick="this.parentElement.scrollIntoView({behavior: 'smooth'})">ホームのコンテンツ</h2>
-      <p>ここはホームページの内容です。最新の情報やお知らせを掲載しています。</p>
+  <main id="content">
+    <section class="content-section">
+      <h2>いらっしゃーい!</h2>
+      <p>
+       <br>
+        個人ブログをあさりたくなる日ってありますよね。
+      </p>
     </section>
-  </div>
-
+  </main>
   <footer>
-    &copy; 2025 自作サイト. All rights reserved.
+    <div class="container">
+      <p>&copy; </p>
+    </div>
   </footer>
 </body>
 </html>

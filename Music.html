@@ -3,29 +3,42 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>曲 - 自作サイト</title>
+  <title>Music | Green Media Art Site</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
-    <h1 onclick="document.getElementById('content').scrollIntoView({behavior: 'smooth'})">曲</h1>
-    <nav>
-      <a href="home.html">ホーム</a>
-      <a href="illustration.html">イラスト</a>
-      <a href="music.html">曲</a>
-      <a href="document.html">記事</a>
-    </nav>
+    <div class="container header-container">
+      <h1 class="site-title"><a href="#content">音楽</a></h1>
+      <nav>
+        <ul class="nav-list">
+          <li><a href="home.html">ホーム</a></li>
+          <li><a href="illustration.html">絵</a></li>
+          <li><a href="music.html">音楽</a></li>
+          <li><a href="document.html">日記</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
-
-  <div class="main-content" id="content">
-    <section>
-      <h2 class="section-title" onclick="this.parentElement.scrollIntoView({behavior: 'smooth'})">音楽プレイリスト</h2>
-      <p>ここには選りすぐりの楽曲を集めたプレイリストがあります。音楽を楽しんでください。</p>
+  <main id="content">
+    <section class="content-section">
+      <h2>Soundscapes & Beats</h2>
+      <p>
+        作曲した楽曲やサウンドデザインを、シンプルで洗練されたページでご紹介します。<br>
+        音楽ファイルは audio タグを使って再生できます。
+      </p>
+      <!-- 音楽サンプル -->
+      <audio controls>
+        <source src="audio/your_song.mp3" type="audio/mpeg">
+        お使いのブラウザは audio 要素に対応していません。
+      </audio>
     </section>
-  </div>
-
+  </main>
   <footer>
-    &copy; 2025 自作サイト. All rights reserved.
+    <div class="container">
+      <p>&copy; 2025 Green Media Art Site</p>
+    </div>
   </footer>
 </body>
 </html>

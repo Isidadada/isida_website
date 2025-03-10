@@ -3,29 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>イラスト - 自作サイト</title>
+  <title>Illustration | Green Media Art Site</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
-    <h1 onclick="document.getElementById('content').scrollIntoView({behavior: 'smooth'})">イラスト</h1>
-    <nav>
-      <a href="home.html">ホーム</a>
-      <a href="illustration.html">イラスト</a>
-      <a href="music.html">曲</a>
-      <a href="document.html">記事</a>
-    </nav>
+    <div class="container header-container">
+      <h1 class="site-title"><a href="#content">イラスト</a></h1>
+      <nav>
+        <ul class="nav-list">
+          <li><a href="home.html">ホーム</a></li>
+          <li><a href="illustration.html">絵</a></li>
+          <li><a href="music.html">音楽</a></li>
+          <li><a href="document.html">日記</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
-
-  <div class="main-content" id="content">
-    <section>
-      <h2 class="section-title" onclick="this.parentElement.scrollIntoView({behavior: 'smooth'})">イラストギャラリー</h2>
-      <p>ここには素晴らしいイラスト作品を展示しています。お気に入りの作品を見つけてください。</p>
+  <main id="content">
+    <section class="content-section">
+      <h2>Gallery of Imagination</h2>
+      <p>
+        独自の視点で描かれたイラスト作品を、シンプルで洗練されたレイアウトで展示しています。<br>
+        各作品の詳細は各ページに遷移させることも可能です。
+      </p>
+      <!-- ここにイラストのサンプルを追加することもできます -->
     </section>
-  </div>
-
+  </main>
   <footer>
-    &copy; 2025 自作サイト. All rights reserved.
+    <div class="container">
+      <p>&copy; 2025 Green Media Art Site</p>
+    </div>
   </footer>
 </body>
 </html>
