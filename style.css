@@ -450,3 +450,46 @@ footer p {
     display: block; /* 追加 */
   }
 }
+
+/* ソートボタン（モノクロ） */
+.sort-buttons {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* ソートボタン（モノクロ反転・四角） */
+.sort-buttons {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* ソートボタン（白背景・黒文字・四角） */
+.sort-buttons {
+  text-align: center;
+  margin-bottom: 30px; /* ボタン全体の余白を増やす */
+}
+
+.sort-buttons button {
+  background: #fff; /* 白背景 */
+  color: #000; /* 黒文字 */
+  border: 2px solid #777; /* 太めの境界線 */
+  padding: 12px 24px;
+  margin: 0 12px; /* ボタン間の余白を広げる */
+  border-radius: 0; /* 角を四角にする */
+  font-size: 1rem;
+  font-weight: bold; /* 太字 */
+  cursor: pointer;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4); /* 強めの影 */
+  transition: background 0.3s ease, transform 0.2s ease, border-color 0.2s ease;
+}
+
+.sort-buttons button:hover {
+  background: #f0f0f0; /* ホバー時は少しグレーに */
+  transform: translateY(-3px); /* 少し持ち上げる */
+  border-color: #999; /* ホバー時に境界線を明るく */
+}
+
+.sort-buttons button:active {
+  transform: translateY(1px); /* クリック時に少し下げる */
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4); /* クリック時の影 */
+}

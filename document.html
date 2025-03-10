@@ -23,16 +23,13 @@
   </header>
   <main id="content">
     <section class="content-section">
-      <!-- ソート用のボタンを追加 -->
       <div class="sort-buttons">
-        <button id="sort-asc">古い順に並び替え</button>
-        <button id="sort-desc">新しい順に並び替え</button>
+        <button id="sort-asc">古</button>
+        <button id="sort-desc">新</button>
       </div>
-
-      <!-- 日記エントリーリスト -->
       <ul class="diary-list">
         <li><a href="2025-3-10.html">2025-03-10:Hello world.</a></li>
-        <li><a href="2025-3-11.html">2025-03-10:Hello world.</a></li>
+        <li><a href="2025-3-11.html">2025-03-11:やばい</a></li>
       </ul>
     </section>
   </main>
@@ -41,35 +38,26 @@
       <p>&copy;2025 </p>
     </div>
   </footer>
-
-  <!-- JavaScriptによる並び替え処理 -->
   <script>
     document.addEventListener('DOMContentLoaded', function(){
       const diaryList = document.querySelector('.diary-list');
-      // リスト内の全 li 要素を配列に変換
       let listItems = Array.from(diaryList.querySelectorAll('li'));
 
-      // 各エントリーのテキストから日付部分（"YYYY-MM-DD"）を抽出し、Dateオブジェクトに変換する関数
       function parseDateFromText(text) {
-        // テキスト例: "2025-03-10:Hello world."
         const dateString = text.split(':')[0];
         return new Date(dateString);
       }
 
-      // 並び替え関数
-      // asc が true の場合は昇順（古い順）、false の場合は降順（新しい順）
       function sortEntries(asc = true){
         listItems.sort((a, b) => {
           const dateA = parseDateFromText(a.textContent);
           const dateB = parseDateFromText(b.textContent);
           return asc ? dateA - dateB : dateB - dateA;
         });
-        // 並び替え後、リストの内容を再構築
         diaryList.innerHTML = '';
         listItems.forEach(item => diaryList.appendChild(item));
       }
 
-      // 各ボタンにクリックイベントを設定
       document.getElementById('sort-asc').addEventListener('click', function(){
         sortEntries(true);
       });
