@@ -349,12 +349,6 @@ main {
   border: 1px solid rgba(232, 232, 232, 0.8);
 }
 
-.content-section h2 {
-  margin-bottom: 20px;
-  font-size: 2rem;
-  color: rgba(118, 222, 118, 0.9);
-}
-
 .content-section p {
   font-size: 1.1rem;
   color: #555;
